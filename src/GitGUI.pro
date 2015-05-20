@@ -13,8 +13,26 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    gitliveproc.cpp \
+    gitcmd.cpp \
+    gitcmdadd.cpp \
+    gitcmdreset.cpp \
+    gitcmdcommit.cpp \
+    gitcmdstatus.cpp \
+    gitcmdpull.cpp \
+    gitcmdpush.cpp \
+    gitcmdinit.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    gitliveproc.h \
+    gitcmd.h \
+    gitcmdadd.h \
+    gitcmdreset.h \
+    gitcmdcommit.h \
+    gitcmdstatus.h \
+    gitcmdpull.h \
+    gitcmdpush.h \
+    gitcmdinit.h
 
 FORMS    += mainwindow.ui
