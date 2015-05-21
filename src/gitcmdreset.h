@@ -7,7 +7,7 @@
 class GitCmdReset : public GitCmd
 {
 public:
-    GitCmdReset(const QStringList & fileList, bool hard = false);
+    GitCmdReset(const QStringList & fileList = QStringList(), bool hard = false);
     ~GitCmdReset();
 protected:
     QStringList getArgs();

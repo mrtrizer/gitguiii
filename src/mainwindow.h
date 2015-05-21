@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QString>
 #include <QStringList>
+#include <pullparams.h>
 
 class QListWidget;
 
@@ -22,30 +23,44 @@ public:
 private:
     Ui::MainWindow *ui;
     QStringList getStrList(QListWidget * changedList);
+    QStringList curIndex;
+    QStringList curChanged;
+    PullParams params;
 
 signals:
     void setRepoDir(QString dir);
     void addToIndex(QStringList strList);
     void updateIndex();
     void resetFromIndex(QStringList strList);
+    void resetAllFromIndex();
     void commitIndex(QString msg);
     void hardReset();
-    void pull(QString source, QString branch);
-    void push(QString target, QString branch);
+    void pull(QString repository, QString branch);
+    void push(QString repository, QString branch);
     void initRepo();
+    void cloneRepo(QString repository, QString branch);
 
 public slots:
     void indexUpdated(QStringList changed, QStringList index);
+    void logText(QString str);
+    void commitChanged(QString commit);
+    void dirChanged(QString dir);
+    void hashUpdated(QStringList hashList);
+    void branchUpdated(QStringList branchList, int index);
 
 private slots:
     void onAddButton();
     void onResetButton();
+    void onResetAllButton();
     void onUpdateButton();
     void onCommitButton();
     void onHardResetButton();
     void onActionLocalRepo();
     void onActionInitRepo();
     void onActionExit();
+    void onActionCloneRepo();
+    void onPushButton();
+    void onPullButton();
 
 };
 

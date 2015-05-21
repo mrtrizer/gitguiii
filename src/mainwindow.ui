@@ -6,95 +6,280 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>559</width>
-    <height>428</height>
+    <width>848</width>
+    <height>528</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>0</height>
+   </size>
+  </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Git'o'</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QHBoxLayout" name="horizontalLayout_3">
+   <layout class="QVBoxLayout" name="verticalLayout_4">
     <item>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout">
+       <widget class="QLabel" name="dirLabel">
+        <property name="text">
+         <string>pwd: ?</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="commitLabel">
+        <property name="text">
+         <string>hash: ?</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <property name="sizeConstraint">
+         <enum>QLayout::SetMinimumSize</enum>
+        </property>
         <item>
-         <widget class="QListWidget" name="changedList"/>
+         <widget class="QListWidget" name="commitList">
+          <property name="minimumSize">
+           <size>
+            <width>200</width>
+            <height>0</height>
+           </size>
+          </property>
+         </widget>
         </item>
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout">
-          <property name="sizeConstraint">
-           <enum>QLayout::SetMinimumSize</enum>
+         <widget class="QComboBox" name="branchBox">
+          <property name="enabled">
+           <bool>false</bool>
           </property>
+          <property name="minimumSize">
+           <size>
+            <width>200</width>
+            <height>0</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_2">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>200</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>cherry-pick %c</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_4">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>200</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>reset %c</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_3">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>200</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>rebase %b</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="checkoutButton">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>200</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>checkout %b</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <property name="sizeConstraint">
+         <enum>QLayout::SetDefaultConstraint</enum>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
-           <widget class="QToolButton" name="addButton">
-            <property name="text">
-             <string>&gt;</string>
-            </property>
-           </widget>
+           <widget class="QListWidget" name="changedList"/>
           </item>
           <item>
-           <widget class="QToolButton" name="resetButton">
-            <property name="text">
-             <string>&lt;</string>
+           <layout class="QVBoxLayout" name="verticalLayout">
+            <property name="sizeConstraint">
+             <enum>QLayout::SetMinimumSize</enum>
             </property>
-           </widget>
+            <item>
+             <widget class="QToolButton" name="addButton">
+              <property name="text">
+               <string>&gt;</string>
+              </property>
+              <property name="icon">
+               <iconset theme="go-next">
+                <normaloff/>
+               </iconset>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QToolButton" name="resetButton">
+              <property name="text">
+               <string>&lt;</string>
+              </property>
+              <property name="icon">
+               <iconset theme="go-previous">
+                <normaloff/>
+               </iconset>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QToolButton" name="updateButton">
+              <property name="text">
+               <string>@</string>
+              </property>
+              <property name="icon">
+               <iconset theme="view-refresh">
+                <normaloff/>
+               </iconset>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QToolButton" name="resetAllButton">
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="edit-clear">
+                <normaloff/>
+               </iconset>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
           </item>
           <item>
-           <widget class="QToolButton" name="updateButton">
-            <property name="text">
-             <string>#</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <spacer name="verticalSpacer">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
+           <widget class="QListWidget" name="indexList"/>
           </item>
          </layout>
         </item>
         <item>
-         <widget class="QListWidget" name="indexList"/>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QPushButton" name="commitButton">
+            <property name="text">
+             <string>commit -m &quot;%m&quot;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="hardResetButton">
+            <property name="text">
+             <string>reset --hard</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pullButton">
+            <property name="text">
+             <string>pull %s %b</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton">
+            <property name="text">
+             <string>push %t %b</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_5">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>fetch %t %b</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
         <item>
-         <widget class="QPushButton" name="commitButton">
-          <property name="text">
-           <string>Commit</string>
+         <widget class="QPlainTextEdit" name="logEdit">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>150</height>
+           </size>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
-        <item>
-         <widget class="QPushButton" name="hardResetButton">
-          <property name="text">
-           <string>Hard reset</string>
-          </property>
-         </widget>
-        </item>
        </layout>
-      </item>
-      <item>
-       <widget class="QListWidget" name="logList">
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>100</height>
-         </size>
-        </property>
-       </widget>
       </item>
      </layout>
     </item>
@@ -105,7 +290,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>559</width>
+     <width>848</width>
      <height>25</height>
     </rect>
    </property>
@@ -115,10 +300,18 @@
     </property>
     <addaction name="actionInitRepo"/>
     <addaction name="actionLocalRepo"/>
+    <addaction name="actionCloneRepo"/>
     <addaction name="separator"/>
     <addaction name="actionExit"/>
    </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>About</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
    <addaction name="menu"/>
+   <addaction name="menuAbout"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -131,7 +324,7 @@
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionLocalRepo">
    <property name="text">
-    <string>Select repository</string>
+    <string>cd %dir</string>
    </property>
   </action>
   <action name="actionExit">
@@ -141,7 +334,20 @@
   </action>
   <action name="actionInitRepo">
    <property name="text">
-    <string>Init repository</string>
+    <string>cd %d &amp;&amp;&amp;&amp; git init</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionCloneRepo">
+   <property name="text">
+    <string>cd %dir &amp;&amp;&amp;&amp; git clone %repo</string>
    </property>
   </action>
  </widget>

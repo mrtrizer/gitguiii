@@ -2,17 +2,19 @@
 #define GITCMDPULL_H
 
 #include "gitcmd.h"
+#include "pullparams.h"
+
 #include <QString>
 
 class GitCmdPull : public GitCmd
 {
 public:
-    GitCmdPull(const QString & source, const QString & branch);
+    GitCmdPull(QString repository, QString branch);
     ~GitCmdPull();
 protected:
     QStringList getArgs();
 private:
-    QString source;
+    QString repository;
     QString branch;
 };
 

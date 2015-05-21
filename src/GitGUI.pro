@@ -22,7 +22,11 @@ SOURCES += main.cpp\
     gitcmdstatus.cpp \
     gitcmdpull.cpp \
     gitcmdpush.cpp \
-    gitcmdinit.cpp
+    gitcmdinit.cpp \
+    pulldialog.cpp \
+    commitdialog.cpp \
+    gitcmdlog.cpp \
+    gitcmdbranch.cpp
 
 HEADERS  += mainwindow.h \
     gitliveproc.h \
@@ -33,6 +37,13 @@ HEADERS  += mainwindow.h \
     gitcmdstatus.h \
     gitcmdpull.h \
     gitcmdpush.h \
-    gitcmdinit.h
+    gitcmdinit.h \
+    pulldialog.h \
+    pullparams.h \
+    commitdialog.h \
+    gitcmdlog.h \
+    gitcmdbranch.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    pulldialog.ui \
+    commitdialog.ui

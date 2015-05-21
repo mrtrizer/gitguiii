@@ -1,6 +1,6 @@
 #include "gitcmdpull.h"
 
-GitCmdPull::GitCmdPull(const QString & source, const QString & branch):source(source), branch(branch)
+GitCmdPull::GitCmdPull(QString repository, QString branch):repository(repository),branch(branch)
 {
 
 }
@@ -14,9 +14,9 @@ QStringList GitCmdPull::getArgs()
 {
     QStringList args;
     args << "pull";
-    if (source.length() > 0)
+    if (repository.length() > 0)
     {
-        args << source;
+        args << repository;
         if (branch.length() > 0)
             args << branch;
     }

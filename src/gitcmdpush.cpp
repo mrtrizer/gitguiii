@@ -1,6 +1,6 @@
 #include "gitcmdpush.h"
 
-GitCmdPush::GitCmdPush(const QString & target, const QString & branch):target(target), branch(branch)
+GitCmdPush::GitCmdPush(QString repository, QString branch):repository(repository),branch(branch)
 {
 
 }
@@ -14,9 +14,9 @@ QStringList GitCmdPush::getArgs()
 {
     QStringList args;
     args << "push";
-    if (target.length() > 0)
+    if (repository.length() > 0)
     {
-        args << target;
+        args << repository;
         if (branch.length() > 0)
             args << branch;
     }
