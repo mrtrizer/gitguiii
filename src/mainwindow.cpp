@@ -25,6 +25,8 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect(ui->pullButton,SIGNAL(clicked()),SLOT(onPullButton()));
     QObject::connect(ui->pushButton,SIGNAL(clicked()),SLOT(onPushButton()));
     params.setBranch("master");
+    emit dirChanged("?");
+    emit commitChanged("?");
 }
 
 MainWindow::~MainWindow()
@@ -155,12 +157,12 @@ void MainWindow::logText(QString str)
 
 void MainWindow::dirChanged(QString dir)
 {
-    ui->dirLabel->setText(QString("Directory: %1").arg(dir));
+    ui->dirLabel->setText(QString("pwd: %1").arg(dir));
 }
 
 void MainWindow::commitChanged(QString commit)
 {
-    ui->commitLabel->setText(QString("Commit: %1").arg(commit));
+    ui->commitLabel->setText(QString("hash: %1").arg(commit));
 }
 
 void MainWindow::hashUpdated(QStringList hashList)
